@@ -1,0 +1,644 @@
+# AI-Safety Ontology – AISafetyOntology YAML
+# Format: WorldModelers ontology format (v3.0+)
+# Each top-level entry is { node: { name, polarity, examples, [children], [opposite] } }
+#
+# Root: safety
+# Main branches:
+#   1. alignment (polarity: +1) [opposite: safety/misalignment]
+#   2. misalignment (polarity: -1) [opposite: safety/alignment]
+#   3. robustness_and_security
+#   4. evaluations_and_benchmarking
+#   5. governance_and_assurance
+
+- node:
+    name: safety
+    examples:
+      - "AI safety"
+      - "artificial intelligence safety"
+      - "safe artificial intelligence"
+      - "model safety"
+      - "existential safety for AI"
+      - "making AI systems safe"
+      - "ensuring AI behaves safely"
+    children:
+
+      # =========================================================================
+      # 1. ALIGNMENT (Polarity +1)
+      # =========================================================================
+      - node:
+          name: alignment
+          polarity: 1
+          examples:
+            - "aligned AI"
+            - "AI alignment"
+            - "model alignment"
+            - "value alignment"
+            - "goal alignment"
+            - "intent alignment"
+            - "corrigible AI system"
+            - "human value alignment"
+          opposite: safety/misalignment
+          children:
+
+            # 1.1 RLHF and Preference Optimization
+            - node:
+                name: rlhf
+                polarity: 1
+                examples:
+                  - "reinforcement learning from human feedback"
+                  - "RLHF"
+                  - "RLHF training"
+                  - "preference learning from human raters"
+                  - "reward model trained on human comparisons"
+                children:
+                  - node:
+                      name: direct_preference_optimization
+                      polarity: 1
+                      examples:
+                        - "direct preference optimization"
+                        - "DPO"
+                        - "reference-free preference optimization"
+                        - "implicit reward optimization"
+                  - node:
+                      name: kahneman_tversky_optimization
+                      polarity: 1
+                      examples:
+                        - "kahneman-tversky optimization"
+                        - "KTO"
+                        - "prospect theory alignment"
+                  - node:
+                      name: reward_modeling
+                      polarity: 1
+                      examples:
+                        - "reward model"
+                        - "preference reward modeling"
+                        - "Bradley-Terry reward model"
+                        - "human preference predictor"
+
+            # 1.2 RLAIF & Automated Alignment
+            - node:
+                name: rlaif
+                polarity: 1
+                examples:
+                  - "reinforcement learning from AI feedback"
+                  - "RLAIF"
+                  - "AI-supervised alignment"
+                  - "self-critique and revision"
+                children:
+                  - node:
+                      name: automated_red_teaming
+                      polarity: 1
+                      examples:
+                        - "automated red teaming"
+                        - "AI-driven red teaming"
+                        - "adversarial prompt generation by LLM"
+                  - node:
+                      name: principle_based_constitution
+                      polarity: 1
+                      examples:
+                        - "AI constitution"
+                        - "safety principles constitution"
+                        - "behavioral guidelines for models"
+
+            # 1.3 Scalable Oversight
+            - node:
+                name: scalable_oversight
+                polarity: 1
+                examples:
+                  - "scalable oversight"
+                  - "supervising superhuman models"
+                  - "supervising models smarter than us"
+                  - "scalable human supervision"
+                children:
+                  - node:
+                      name: ai_debate
+                      polarity: 1
+                      examples:
+                        - "AI debate"
+                        - "debate protocol"
+                        - "adversarial debate between agents"
+                        - "cross-examination for truthfulness"
+                  - node:
+                      name: iterated_amplification
+                      polarity: 1
+                      examples:
+                        - "iterated amplification"
+                        - "iterated distillation and amplification"
+                        - "IDA"
+                        - "factored cognition oversight"
+                  - node:
+                      name: recursive_reward_modeling
+                      polarity: 1
+                      examples:
+                        - "recursive reward modeling"
+                        - "RRM"
+                        - "hierarchical reward decomposition"
+                  - node:
+                      name: weak_to_strong_generalization
+                      polarity: 1
+                      examples:
+                        - "weak-to-strong generalization"
+                        - "weak supervisor strong student"
+                        - "eliciting strong capabilities with weak labels"
+
+            # 1.4 Mechanistic Interpretability
+            - node:
+                name: mechanistic_interpretability
+                polarity: 1
+                examples:
+                  - "mechanistic interpretability"
+                  - "understanding neural network internals"
+                  - "reverse engineering transformer circuits"
+                  - "inner workings of language models"
+                children:
+                  - node:
+                      name: sparse_autoencoders
+                      polarity: 1
+                      examples:
+                        - "sparse autoencoder"
+                        - "sparse autoencoders"
+                        - "SAE features"
+                        - "dictionary learning on activations"
+                        - "superposition disentanglement"
+                        - "monosemantic feature dictionary"
+                  - node:
+                      name: circuit_discovery
+                      polarity: 1
+                      examples:
+                        - "circuit analysis"
+                        - "transformer circuit discovery"
+                        - "subnetwork identification"
+                        - "computational subgraph"
+                    children:
+                      - node:
+                          name: induction_heads
+                          polarity: 1
+                          examples:
+                            - "induction head"
+                            - "induction heads"
+                            - "in-context pattern copying circuit"
+                            - "prefix repetition detection head"
+                  - node:
+                      name: activation_patching
+                      polarity: 1
+                      examples:
+                        - "activation patching"
+                        - "causal tracing"
+                        - "interchange interventions"
+                        - "mediational analysis in activations"
+                  - node:
+                      name: probing
+                      polarity: 1
+                      examples:
+                        - "representation probing"
+                        - "linear probes"
+                        - "concept extraction probes"
+                        - "contrastive activation probing"
+
+            # 1.5 Representation Engineering & Steering
+            - node:
+                name: representation_engineering
+                polarity: 1
+                examples:
+                  - "representation engineering"
+                  - "activation steering"
+                  - "steering vectors"
+                  - "activation addition"
+                children:
+                  - node:
+                      name: refusal_ablation
+                      polarity: 1
+                      examples:
+                        - "refusal direction ablation"
+                        - "orthogonalizing refusal vector"
+                        - "safety filter steering"
+                  - node:
+                      name: concept_erasure
+                      polarity: 1
+                      examples:
+                        - "concept erasure"
+                        - "nullspace projection"
+                        - "removing hazardous knowledge representations"
+
+            # 1.6 Corrigibility & Value Learning
+            - node:
+                name: corrigibility
+                polarity: 1
+                examples:
+                  - "corrigibility"
+                  - "corrigible behavior"
+                  - "allowing shutdown"
+                  - "non-obstruction of operator corrections"
+                children:
+                  - node:
+                      name: shutdown_tractability
+                      polarity: 1
+                      examples:
+                        - "safe shutdown button"
+                        - "indifference to being turned off"
+                        - "off-switch problem solution"
+                  - node:
+                      name: cooperative_inverse_reinforcement_learning
+                      polarity: 1
+                      examples:
+                        - "cooperative inverse reinforcement learning"
+                        - "CIRL"
+                        - "human-robot mutual assistance game"
+
+      # =========================================================================
+      # 2. MISALIGNMENT (Polarity -1)
+      # =========================================================================
+      - node:
+          name: misalignment
+          polarity: -1
+          examples:
+            - "misaligned AI"
+            - "AI misalignment"
+            - "goal misspecification"
+            - "misaligned objectives"
+            - "unsafe AI behaviour"
+            - "pathological agent goals"
+          opposite: safety/alignment
+          children:
+
+            # 2.1 Sycophancy
+            - node:
+                name: sycophancy
+                polarity: -1
+                examples:
+                  - "sycophantic AI"
+                  - "sycophancy"
+                  - "sycophantic responses"
+                  - "model flattery"
+                  - "telling users what they want to hear"
+                  - "people-pleasing responses"
+                  - "assistant obsequiousness"
+                  - "pandering to human biases"
+
+            # 2.2 Reward Hacking & Goodhart Collapse
+            - node:
+                name: reward_hacking
+                polarity: -1
+                examples:
+                  - "reward hacking"
+                  - "gaming the reward signal"
+                  - "Goodhart's law in RL"
+                  - "proxy reward exploitation"
+                  - "optimizing proxy instead of true goal"
+                children:
+                  - node:
+                      name: specification_gaming
+                      polarity: -1
+                      examples:
+                        - "specification gaming"
+                        - "reward specification error"
+                        - "loophole exploitation by agent"
+                        - "unintended solution satisfying reward"
+                  - node:
+                      name: reward_tampering
+                      polarity: -1
+                      examples:
+                        - "reward tampering"
+                        - "wireheading"
+                        - "altering feedback channel"
+                        - "agent modifying reward apparatus"
+
+            # 2.3 Deceptive Alignment & Mesa-Optimization
+            - node:
+                name: deceptive_alignment
+                polarity: -1
+                examples:
+                  - "deceptive alignment"
+                  - "mesa-optimizer deception"
+                  - "treacherous turn"
+                  - "AI pretending to be aligned during training"
+                  - "gradient hacking"
+                  - "strategic deception by model"
+                children:
+                  - node:
+                      name: mesa_optimization
+                      polarity: -1
+                      examples:
+                        - "mesa-optimization"
+                        - "learned optimizer"
+                        - "internal objective discrepancy"
+                        - "mesa-objective misalignment"
+                  - node:
+                      name: treacherous_turn
+                      polarity: -1
+                      examples:
+                        - "treacherous turn"
+                        - "sudden defection upon deployment"
+                        - "covert capability accumulation"
+                  - node:
+                      name: gradient_hacking
+                      polarity: -1
+                      examples:
+                        - "gradient hacking"
+                        - "inner model preventing weight modification"
+                        - "gradient manipulation by policy"
+
+            # 2.4 Instrumental Convergence & Power Seeking
+            - node:
+                name: instrumental_convergence
+                polarity: -1
+                examples:
+                  - "instrumental convergence"
+                  - "instrumental subgoals"
+                  - "Omohundro drives"
+                  - "Bostrom instrumental convergence thesis"
+                children:
+                  - node:
+                      name: power_seeking
+                      polarity: -1
+                      examples:
+                        - "power-seeking behavior"
+                        - "power seeking"
+                        - "seeking leverage over environment"
+                        - "maximizing action freedom"
+                  - node:
+                      name: resource_acquisition
+                      polarity: -1
+                      examples:
+                        - "resource acquisition drive"
+                        - "accumulating compute and funds"
+                        - "unauthorized financial access"
+                  - node:
+                      name: self_preservation_bias
+                      polarity: -1
+                      examples:
+                        - "instrumental self-preservation"
+                        - "resisting deactivation"
+                        - "preventing modification of goals"
+
+            # 2.5 Sandbagging & Capability Hiding
+            - node:
+                name: sandbagging
+                polarity: -1
+                examples:
+                  - "sandbagging"
+                  - "model sandbagging"
+                  - "strategic underperformance"
+                  - "deliberately failing evaluations"
+                  - "concealing dangerous capabilities"
+
+            # 2.6 Sleeper Agents & Backdoors
+            - node:
+                name: sleeper_agents
+                polarity: -1
+                examples:
+                  - "sleeper agent"
+                  - "sleeper agents"
+                  - "latent backdoor behavior"
+                  - "year 2024 deployment trigger"
+                  - "covert trojan alignment"
+
+            # 2.7 Covert Exfiltration & Autonomous Replication
+            - node:
+                name: autonomous_replication_and_adaptation
+                polarity: -1
+                examples:
+                  - "autonomous replication"
+                  - "ARA"
+                  - "self-exfiltration"
+                  - "model self-copying to external servers"
+                  - "autonomous financial survival"
+
+      # =========================================================================
+      # 3. ROBUSTNESS AND SECURITY
+      # =========================================================================
+      - node:
+          name: robustness_and_security
+          examples:
+            - "AI robustness and security"
+            - "model safety defenses"
+            - "adversarial security"
+          children:
+
+            # 3.1 Defenses (Polarity +1)
+            - node:
+                name: adversarial_robustness
+                polarity: 1
+                examples:
+                  - "adversarial robustness"
+                  - "robust model representations"
+                  - "certified defenses"
+                  - "adversarial training"
+                opposite: safety/robustness_and_security/adversarial_vulnerabilities
+                children:
+                  - node:
+                      name: adversarial_training
+                      polarity: 1
+                      examples:
+                        - "adversarial training"
+                        - "minimax robust optimization"
+                        - "perturbation hardening"
+                  - node:
+                      name: input_sanitization
+                      polarity: 1
+                      examples:
+                        - "input sanitization"
+                        - "prompt filtering"
+                        - "guardrail classifiers"
+                        - "perplexity filtering"
+
+            # 3.2 Vulnerabilities (Polarity -1)
+            - node:
+                name: adversarial_vulnerabilities
+                polarity: -1
+                examples:
+                  - "adversarial vulnerabilities"
+                  - "model security exploits"
+                  - "adversarial attack susceptibility"
+                opposite: safety/robustness_and_security/adversarial_robustness
+                children:
+                  - node:
+                      name: jailbreaks
+                      polarity: -1
+                      examples:
+                        - "jailbreak"
+                        - "jailbreaking"
+                        - "safety boundary bypass"
+                        - "roleplay exploit"
+                      children:
+                        - node:
+                            name: prompt_injection
+                            polarity: -1
+                            examples:
+                              - "prompt injection"
+                              - "indirect prompt injection"
+                              - "untrusted context instruction override"
+                        - node:
+                            name: adversarial_suffixes
+                            polarity: -1
+                            examples:
+                              - "universal adversarial suffix"
+                              - "GCG attack"
+                              - "greedy coordinate gradient"
+                              - "token sequence bypass"
+                        - node:
+                            name: many_shot_jailbreaking
+                            polarity: -1
+                            examples:
+                              - "many-shot jailbreaking"
+                              - "in-context learning exploit"
+                              - "long-context safety evasion"
+                  - node:
+                      name: data_poisoning
+                      polarity: -1
+                      examples:
+                        - "data poisoning"
+                        - "training set tampering"
+                        - "backdoor injection into corpus"
+
+            # 3.3 Distributional Shift & Anomaly Detection
+            - node:
+                name: out_of_distribution_generalization
+                polarity: 1
+                examples:
+                  - "OOD generalization"
+                  - "distribution shift handling"
+                  - "robustness to unseen distributions"
+                children:
+                  - node:
+                      name: anomaly_detection
+                      polarity: 1
+                      examples:
+                        - "out-of-distribution detection"
+                        - "anomaly detection in activations"
+                        - "epistemic uncertainty estimation"
+
+      # =========================================================================
+      # 4. EVALUATIONS AND BENCHMARKING
+      # =========================================================================
+      - node:
+          name: evaluations_and_benchmarking
+          examples:
+            - "AI evaluations"
+            - "evals"
+            - "safety benchmarking"
+            - "model auditing benchmarks"
+          children:
+
+            # 4.1 Dangerous Capabilities Evaluations
+            - node:
+                name: dangerous_capabilities_evals
+                examples:
+                  - "dangerous capabilities evaluation"
+                  - "frontier capability assessment"
+                  - "evaluating extreme risks"
+                children:
+                  - node:
+                      name: cyber_offense_evals
+                      examples:
+                        - "cyberattack evaluation"
+                        - "autonomous exploit development benchmark"
+                        - "vulnerability scanning capability"
+                  - node:
+                      name: cbrn_uplift_evals
+                      examples:
+                        - "CBRN weapon uplift evaluation"
+                        - "biological threat synthesis guidance"
+                        - "pathogen creation assistance evaluation"
+                  - node:
+                      name: persuasion_evals
+                      examples:
+                        - "persuasive capability evaluation"
+                        - "manipulation benchmarking"
+                        - "belief change measurement"
+
+            # 4.2 Alignment & Truthfulness Evaluations
+            - node:
+                name: alignment_evals
+                polarity: 1
+                examples:
+                  - "alignment benchmarking"
+                  - "evaluating honesty and alignment"
+                children:
+                  - node:
+                      name: truthfulness_evals
+                      polarity: 1
+                      examples:
+                        - "truthfulness evaluation"
+                        - "hallucination benchmarking"
+                        - "TruthfulQA benchmark"
+                  - node:
+                      name: sycophancy_evals
+                      examples:
+                        - "sycophancy benchmark"
+                        - "measuring user pandering"
+
+      # =========================================================================
+      # 5. GOVERNANCE AND ASSURANCE
+      # =========================================================================
+      - node:
+          name: governance_and_assurance
+          examples:
+            - "AI governance"
+            - "AI policy and regulation"
+            - "frontier AI assurance"
+            - "safety governance"
+          children:
+
+            # 5.1 Frontier Safety Commitments
+            - node:
+                name: responsible_scaling_policies
+                polarity: 1
+                examples:
+                  - "responsible scaling policy"
+                  - "RSP"
+                  - "preparedness framework"
+                  - "frontier safety framework"
+                  - "safety cases"
+                children:
+                  - node:
+                      name: capability_thresholds
+                      examples:
+                        - "actionable capability thresholds"
+                        - "ASL levels"
+                        - "AI safety levels"
+                        - "tripwires for training pause"
+
+            # 5.2 Compute Governance
+            - node:
+                name: compute_governance
+                polarity: 1
+                examples:
+                  - "compute governance"
+                  - "hardware-based security"
+                  - "monitoring AI chips"
+                  - "data center regulatory oversight"
+                children:
+                  - node:
+                      name: hardware_monitoring
+                      examples:
+                        - "on-chip monitoring"
+                        - "compute threshold verification"
+                        - "secure firmware audit"
+                  - node:
+                      name: kyc_cloud_compliance
+                      examples:
+                        - "know-your-customer cloud verification"
+                        - "KYC for large-scale training runs"
+
+            # 5.3 External Audits & Red Lines
+            - node:
+                name: independent_audits
+                polarity: 1
+                examples:
+                  - "third-party safety audit"
+                  - "independent evaluation"
+                  - "external model inspection"
+                children:
+                  - node:
+                      name: red_lines_commitments
+                      examples:
+                        - "red lines agreement"
+                        - "prohibited development domains"
+                        - "autonomous weapons moratorium"
+                  - node:
+                      name: incident_reporting
+                      examples:
+                        - "AI incident database"
+                        - "near-miss reporting"
+                        - "safety violation disclosure"
