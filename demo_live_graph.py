@@ -689,12 +689,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
       outEdges.forEach(e => {
         html += `<div style="font-size:0.8rem; padding:6px; background:#0d1117; border-radius:4px; margin-bottom:4px;">
-          &rarr; Influences <strong style="color:var(--text-bright);">${e.data('target')}</strong> (Belief: ${(e.data('belief')*100).toFixed(1)}%%)
+          &rarr; Influences <strong style="color:var(--text-bright);">${e.data('target')}</strong> (Belief: ${(e.data('belief')*100).toFixed(1)}%)
         </div>`;
       });
       inEdges.forEach(e => {
         html += `<div style="font-size:0.8rem; padding:6px; background:#0d1117; border-radius:4px; margin-bottom:4px;">
-          &larr; Influenced by <strong style="color:var(--text-bright);">${e.data('source')}</strong> (Belief: ${(e.data('belief')*100).toFixed(1)}%%)
+          &larr; Influenced by <strong style="color:var(--text-bright);">${e.data('source')}</strong> (Belief: ${(e.data('belief')*100).toFixed(1)}%)
         </div>`;
       });
 
@@ -727,10 +727,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
           <div style="margin-top:8px;">
             <div style="display:flex; justify-content:space-between; font-size:0.75rem;">
               <span>Assembled Belief Score:</span>
-              <strong style="color:var(--accent);">${beliefPct}%%</strong>
+              <strong style="color:var(--accent);">${beliefPct}%</strong>
             </div>
             <div class="belief-bar-bg">
-              <div class="belief-bar-fill" style="width: ${beliefPct}%%"></div>
+              <div class="belief-bar-fill" style="width: ${beliefPct}%"></div>
             </div>
           </div>
           <div style="font-size:0.75rem; color:#8b949e; margin-top:4px;">

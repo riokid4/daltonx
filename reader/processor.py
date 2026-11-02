@@ -208,12 +208,25 @@ class AISafetyProcessor:
         )
 
         # Paper metadata & provenance
+        page_span = raw_data.get('page_span') or raw_data.get('pages')
+        chunk_name = raw_data.get('chunk_name') or raw_data.get('name')
+        docname = raw_data.get('docname')
+        dockey = raw_data.get('dockey')
+
         paper_id = (
             raw_data.get('paper_id')
             or raw_data.get('doc_id')
             or raw_data.get('pmid')
             or raw_data.get('arxiv_id')
+            or chunk_name
+            or docname
         )
+        # If paper_id is pure docname and page_span is provided, prefer full page-span citation
+        if paper_id and page_span and str(page_span) not in str(paper_id):
+            full_span_id = f"{paper_id} {page_span}" if not str(page_span).startswith('pages') else f"{paper_id} {page_span}"
+            # preserve original paper_id in annotations but allow full citation in pmid if specified
+            paper_id = full_span_id
+
         title = raw_data.get('title')
         section = raw_data.get('section')
         citation = raw_data.get('citation')
@@ -258,6 +271,14 @@ class AISafetyProcessor:
         }
         if paper_id:
             annotations['paper_id'] = str(paper_id)
+        if page_span:
+            annotations['page_span'] = str(page_span)
+        if chunk_name:
+            annotations['chunk_name'] = str(chunk_name)
+        if docname:
+            annotations['docname'] = str(docname)
+        if dockey:
+            annotations['dockey'] = str(dockey)
         if section:
             annotations['section'] = str(section)
         if citation:
